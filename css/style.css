@@ -1,0 +1,32 @@
+/* ALL */
+
+
+body {
+	font-family: 'Roboto', sans-serif, Arial ; 
+}
+
+div {
+	text-align: center;
+}
+/* HEADER */
+
+/* INFOS */
+.sun {
+	background-color: #FDB813 ;
+}
+
+.rain {
+	color: #004CFF ;
+}
+
+#picture img{
+	width: 15%;
+}
+
+#city {
+	background-color: black ;
+	opacity: 0.6 ;
+	padding: 2em ; 
+	color: white ; 
+	font-size: large;
+}

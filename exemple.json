@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": 4.85,
+    "lat": 45.75
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 291.41,
+    "pressure": 1017,
+    "humidity": 71,
+    "temp_min": 290.37,
+    "temp_max": 293.15
+  },
+  "wind": {
+    "speed": 4.11,
+    "gust": 7.2
+  },
+  "rain": {
+    "3h": 0.005
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1465460821,
+  "sys": {
+    "type": 3,
+    "id": 62901,
+    "message": 0.0313,
+    "country": "FR",
+    "sunrise": 1465444253,
+    "sunset": 1465500564
+  },
+  "id": 2996944,
+  "name": "Lyon",
+  "cod": 200
+}
