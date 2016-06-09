@@ -29,4 +29,7 @@ div {
 	padding: 2em ; 
 	color: white ; 
 	font-size: large;
+	bottom: 0px;
+    position: absolute;
+    width: 100%;
 }
