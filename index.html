@@ -10,13 +10,15 @@
 
 	<!--Stylesheet-->
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 
 	    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+     <!--<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">-->
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/creative.css" type="text/css">
+    <!-- Custom CSS 
+    <link rel="stylesheet" href="css/creative.css" type="text/css">-->
+
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -31,7 +33,7 @@
     <![endif]-->
 </head>
 
-<body class="sun" id="page-top">
+<body>
 
 <!-- HEADER -->
 
@@ -64,36 +66,39 @@
         <!-- /.container-fluid -->
     </nav>
 
+<!-- / HEADER -->
+
 <!-- TEMPERATURES AND PICTURES -->
-	<section id="services">
+	<section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <div id="temp" class="service-box">
-                    </div>
+                    <div id="temp"></div>
                 </div>
+
                 <div class="col-lg-4 text-center">
-                    <div id="picture" class="service-box">
-                        <i class="fa fa-4x fa-cloud text-primary sr-icons"></i>
+                    <div id="picture">
+                        <i class="fa fa-cloud text-primary sr-icons"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+<!-- / TEMPERATURES AND PICTURES -->
 
 <!--TIME AND DATE-->
-
-	<section class="bg-primary" id="about">
+	<section>
         <div class="container">
-            <div class="row">
-                <div  id = "infosday" class="col-lg-8 col-lg-offset-2 ">
-                </div>
+            <div class="row" id="timeDate">
+                <div class="col-lg-12 text-left" id="infosday"></div>
             </div>
         </div>
 	</section>
-	
+<!-- / TIME AND DATE-->
+
 <!-- INFOS WEATHER -->
-<!-- Min/Max -->
+
+	<!-- Min/Max -->
     <section id="sminMax">
         <div class="container">
             <div class="row">
@@ -102,8 +107,9 @@
             </div>
         </div>
     </section>
-<!-- Description -->
-	<section id="sDescription">
+
+	<!-- Description -->
+	<section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center" id="description">
@@ -111,31 +117,30 @@
             </div>
         </div>
     </section>
-<!-- Wind / Humidity -->
+
+	<!-- Wind / Humidity -->
 	<section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <div id="wind" class="service-box">
-                    </div>
+                    <div id="wind"></div>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <div id="humidity" class="service-box">
-                    </div>
+                    <div id="humidity"></div>
                 </div>
             </div>
         </div>
     </section>
+<!-- / INFOS WEATHER -->
 
 <!-- INFOS CITY -->
 	<aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action" id="city">
-            </div>
+        <div class="container">
+            <div id="city"></div>
         </div>
     </aside>
 
-
+<!-- / INFOS CITY -->
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

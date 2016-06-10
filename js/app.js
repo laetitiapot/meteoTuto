@@ -1,5 +1,5 @@
 // Datas weather
-var weather = {
+/*var weather = {
   "coord": {
     "lon": 4.85,
     "lat": 45.75
@@ -40,9 +40,11 @@ var weather = {
   "id": 2996944,
   "name": "Lyon",
   "cod": 200
-};
+};*/
 //console.log(weather);
-
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Lyon&APPID=093a59774aaa3c40102cbca0c0029891&units=metric", false); xhr.send(); 
+var data= JSON.parse(xhr.responseText); 
 
 // Function datas rounded to the nearest integer
 function Round(x){
@@ -64,7 +66,7 @@ function formattedDate(date) {
     if (day.length < 2) day = '0' + day;
     if (hours.length < 2) hours = '0' + hours;
     if (minutes.length < 2) minutes = '0' + minutes;
-    var infosDate = '<div id ="hours"> '+ hours + ' : '+ minutes +'</div> '+'<div id ="day"> '+ day +"/" + month +"/" + year +'</div> ';
+    var infosDate = hours + ' : '+ minutes +' <br/> Le '+ day +"/" + month +"/" + year;
     return infosDate ;
 };
 
@@ -87,9 +89,9 @@ window.onload = function infos(){
 	document.getElementById("temp").innerHTML = temp + '°C  ' ;
   document.getElementById("description").innerHTML = description;
 	document.getElementById("minMax").innerHTML = 'Temp min. ' + tempMin + '°C / ' + 'max. ' +tempMax + '°C';
-	document.getElementById("wind").innerHTML = "<span class='glyphicon glyphicon-flag'></span> Vent : " + wind + ' m/s';
-	document.getElementById("humidity").innerHTML = "<span class='glyphicon glyphicon-tint'></span> Humidité : " + humidity + ' %';
-	document.getElementById("city").innerHTML = "<span class='glyphicon glyphicon-map-marker'></span> " + city + ', ' + country ;
+	document.getElementById("wind").innerHTML = '<i class="fa fa-flag" aria-hidden="true"></i> Vent : ' + wind + ' m/s';
+	document.getElementById("humidity").innerHTML = '<i class="fa fa-tint" aria-hidden="true"></i> Humidité : ' + humidity + ' %';
+	document.getElementById("city").innerHTML = '<i class="fa fa-map-marker" aria-hidden="true"></i> ' + city + ', ' + country ;
 	
 
 };
