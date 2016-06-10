@@ -64,13 +64,13 @@ function formattedDate(date) {
     if (day.length < 2) day = '0' + day;
     if (hours.length < 2) hours = '0' + hours;
     if (minutes.length < 2) minutes = '0' + minutes;
-    var infosDate = '<div id ="hours"> '+ hours + ' : '+ minutes +'</div> '+ day +"/" + month +"/" + year ;
+    var infosDate = '<div id ="hours"> '+ hours + ' : '+ minutes +'</div> '+'<div id ="day"> '+ day +"/" + month +"/" + year +'</div> ';
     return infosDate ;
 };
 
 // Var datas
 var temp = Round(weather.main.temp);
-var description = Round(weather.weather[0].description);
+var description = weather.weather[0].description.toUpperCase();
 var tempMin = Round(weather.main.temp_min);
 var tempMax = Round(weather.main.temp_max);
 var wind = Round(weather.wind.speed);
@@ -80,10 +80,12 @@ var country = weather.sys.country;
 // var date and hours
 var infosDate = formattedDate();
 
+console.log(description);
 //
 window.onload = function infos(){
-	document.getElementById("day").innerHTML = infosDate ;
+	document.getElementById("infosday").innerHTML = infosDate ;
 	document.getElementById("temp").innerHTML = temp + '°C  ' ;
+  document.getElementById("description").innerHTML = description;
 	document.getElementById("minMax").innerHTML = 'Temp min. ' + tempMin + '°C / ' + 'max. ' +tempMax + '°C';
 	document.getElementById("wind").innerHTML = "<span class='glyphicon glyphicon-flag'></span> Vent : " + wind + ' m/s';
 	document.getElementById("humidity").innerHTML = "<span class='glyphicon glyphicon-tint'></span> Humidité : " + humidity + ' %';

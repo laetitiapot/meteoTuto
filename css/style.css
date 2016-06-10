@@ -1,11 +1,6 @@
 /* ALL */
 
 
-body {
-	font-family: 'Roboto', sans-serif, Arial ; 
-	
-}
-
 div {
 	text-align: center;
 }
@@ -61,7 +56,7 @@ h1 a:hover {
 	width: 15%;
 }
 
-#city {
+/*#city {
 	background-color: black ;
 	opacity: 0.6 ;
 	padding: 2em ; 
@@ -70,4 +65,4 @@ h1 a:hover {
 	bottom: 0px;
     position: absolute;
     width: 100%;
-}
+}*/
