@@ -3,31 +3,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tuto app meteo">
-    <meta name="author" content="Laetitia Pot">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Tuto app meteo">
+	<meta name="author" content="Laetitia Pot">
 	<title>Meteo</title>
 
 	<!--Stylesheet-->
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	
-
-	    <!-- Plugin CSS -->
-     <!--<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">-->
-
-    <!-- Custom CSS 
-    <link rel="stylesheet" href="css/creative.css" type="text/css">-->
 
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 	<!--JS-->
 	<script type="text/javascript" src="js/app.js"></script>
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -35,126 +28,122 @@
 
 <body>
 
-<!-- HEADER -->
+	<!-- HEADER -->
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#">App Météo</a>
+			</div>
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#">App Météo</a>
-            </div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="page-scroll" href="#">Aujourd'hui</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#">Demain</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#">Aujourd'hui</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">Demain</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+	<!-- / HEADER -->
 
-<!-- / HEADER -->
-
-<!-- TEMPERATURES AND PICTURES -->
+	<!-- TEMPERATURES AND PICTURES -->
 	<section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <div id="temp"></div>
-                </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-2 text-center">
+					<div id="temp"></div>
+				</div>
 
-                <div class="col-lg-4 text-center">
-                    <div id="picture">
-                        <i class="fa fa-cloud text-primary sr-icons"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- / TEMPERATURES AND PICTURES -->
-
-<!--TIME AND DATE-->
-	<section>
-        <div class="container">
-            <div class="row" id="timeDate">
-                <div class="col-lg-12 text-left" id="infosday"></div>
-            </div>
-        </div>
+				<div class="col-lg-4 text-center">
+					<div id="picture">
+						<i class="fa fa-cloud text-primary sr-icons"></i>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
-<!-- / TIME AND DATE-->
+	<!-- / TEMPERATURES AND PICTURES -->
 
-<!-- INFOS WEATHER -->
+	<!--TIME AND DATE-->
+	<section>
+		<div class="container">
+			<div class="row" id="timeDate">
+				<div class="col-lg-12 text-left" id="infosday"></div>
+			</div>
+		</div>
+	</section>
+	<!-- / TIME AND DATE-->
+
+	<!-- INFOS WEATHER -->
 
 	<!-- Min/Max -->
-    <section id="sminMax">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center" id="minMax">
-                </div>
-            </div>
-        </div>
-    </section>
+	<section id="sminMax">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center" id="minMax">
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Description -->
 	<section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center" id="description">
-                </div>
-            </div>
-        </div>
-    </section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center" id="description">
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Wind / Humidity -->
 	<section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <div id="wind"></div>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div id="humidity"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- / INFOS WEATHER -->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-2 text-center">
+					<div id="wind"></div>
+				</div>
+				<div class="col-lg-4 text-center">
+					<div id="humidity"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- / INFOS WEATHER -->
 
-<!-- INFOS CITY -->
+	<!-- INFOS CITY -->
 	<aside class="bg-dark">
-        <div class="container">
-            <div id="city"></div>
-        </div>
-    </aside>
+		<div class="container">
+			<div id="city"></div>
+		</div>
+	</aside>
 
-<!-- / INFOS CITY -->
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+	<!-- / INFOS CITY -->
+	<!-- jQuery -->
+	<script src="js/vendors/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/vendors/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="js/scrollreveal.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/creative.js"></script>
+	<!-- Plugin JavaScript -->
+	<script src="js/vendors/jquery.easing.min.js"></script>
+	<script src="js/vendors/jquery.fittext.js"></script>
+	<script src="js/vendors/jquery.magnific-popup.min.js"></script>
 
 </body>
+
 </html>
