@@ -3,6 +3,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif, Arial ; 
+	
 }
 
 div {
@@ -10,7 +11,44 @@ div {
 }
 /* HEADER */
 
+h1 a {
+    margin: 0 auto 0 0;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 1.65em;
+    line-height: 1;
+    display: inline-block;
+    padding-left: 1em ;
+    color: #252445; 
+}
+
+h1 a:hover {
+     text-decoration:none; 
+    color: #fff; 
+}
+
+
 /* INFOS */
+#day {
+	font-size: 1em;
+    font-weight: 600;
+    margin: 0 0 1em;
+    color: #252445;
+}
+#hours {
+	font-size: 2em;
+    font-weight: 700;
+    margin: 0 0 0 0;
+    color: #252445;
+}
+
+#temp {
+	font-size: 8em;
+    font-weight: 700;
+    margin: 0 0 0.1em;
+}
+
+
 .sun {
 	background-color: #FDB813 ;
 }
