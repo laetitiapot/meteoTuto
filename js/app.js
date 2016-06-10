@@ -1,6 +1,13 @@
-window.onload = function infos(){
+$(function(){
   getWeather('Lyon', render);
-};
+});
+
+function getWeather(city, callback){
+  var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=093a59774aaa3c40102cbca0c0029891&units=metric";
+  $.getJSON(url, function(jsonWeather){
+    callback(jsonWeather);
+  });
+}
 
 // Var datas
 function render (weather) {
@@ -14,35 +21,14 @@ function render (weather) {
   var humidity = Math.round(weather.main.humidity);
   var city = weather.name;
   var country = weather.sys.country;
-  document.getElementById("infosday").innerHTML = infosDate ;
-  document.getElementById("temp").innerHTML = temp + '°C  ' ;
-  document.getElementById("description").innerHTML = description;
-  document.getElementById("minMax").innerHTML = 'Temp min. ' + tempMin + '°C / ' + 'max. ' +tempMax + '°C';
-  document.getElementById("wind").innerHTML = '<i class="fa fa-flag" aria-hidden="true"></i> Vent : ' + wind + ' m/s';
-  document.getElementById("humidity").innerHTML = '<i class="fa fa-tint" aria-hidden="true"></i> Humidité : ' + humidity + ' %';
-  document.getElementById("city").innerHTML = '<i class="fa fa-map-marker" aria-hidden="true"></i> ' + city + ', ' + country ;
+  $("#infosday").html( infosDate );
+  $("#temp").html( temp + '°C  ' );
+  $("#description").html( description);
+  $("#minMax").html( 'Temp min. ' + tempMin + '°C / ' + 'max. ' +tempMax + '°C');
+  $("#wind").html( '<i class="fa fa-flag" aria-hidden="true"></i> Vent : ' + wind + ' m/s');
+  $("#humidity").html( '<i class="fa fa-tint" aria-hidden="true"></i> Humidité : ' + humidity + ' %');
+  $("#city").html( '<i class="fa fa-map-marker" aria-hidden="true"></i> ' + city + ', ' + country );
 };
-
-
-function getWeather(city, cb){
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=093a59774aaa3c40102cbca0c0029891&units=metric", true);
-  xhr.onload = function (e) {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        var weather = JSON.parse(xhr.responseText);
-        cb(weather);
-        // render(weather);
-      } else {
-        console.error(xhr.statusText);
-      }
-    }
-  };
-  xhr.onerror = function (e) {
-    console.error(xhr.statusText);
-  };
-  xhr.send(null);
-}
 
 // Function formatting date and hours
 function formattedDate(date) {
