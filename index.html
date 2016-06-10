@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="meteo">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +26,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body ng-controller="MeteoController as vm">
 
 	<!-- HEADER -->
 	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -52,11 +53,11 @@
 					</li>
 				</ul>
 				<div class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search" id="searchCityInput">
-                    </div>
-                    <button class="btn " id="searchCitySubmit">Submit</button>
-                </div>
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="vm.inputValue" placeholder="Search" id="searchCityInput">
+					</div>
+					<button class="btn" id="searchCitySubmit" ng-click="vm.refreshWeather(vm.inputValue)">Submit</button>
+				</div>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
@@ -70,7 +71,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-2 text-center">
-					<div id="temp"></div>
+					<div>{{vm.temp}}</div>
 				</div>
 
 				<div class="col-lg-4 text-center">
@@ -87,7 +88,7 @@
 	<section>
 		<div class="container">
 			<div class="row" id="timeDate">
-				<div class="col-lg-12 text-left" id="infosday"></div>
+				<div class="col-lg-12 text-left">{{vm.infosday}}</div>
 			</div>
 		</div>
 	</section>
@@ -99,8 +100,7 @@
 	<section id="sminMax">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 text-center" id="minMax">
-				</div>
+				<div class="col-lg-12 text-center">{{vm.minMax}}</div>
 			</div>
 		</div>
 	</section>
@@ -109,8 +109,7 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 text-center" id="description">
-				</div>
+				<div class="col-lg-12 text-center">{{vm.description}}</div>
 			</div>
 		</div>
 	</section>
@@ -120,10 +119,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-2 text-center">
-					<div id="wind"></div>
+					<div><i class="fa fa-flag" aria-hidden="true"></i> {{vm.wind}}</div>
 				</div>
 				<div class="col-lg-4 text-center">
-					<div id="humidity"></div>
+					<div><i class="fa fa-tint" aria-hidden="true"></i> {{vm.humidity}}</div>
 				</div>
 			</div>
 		</div>
@@ -133,7 +132,7 @@
 	<!-- INFOS CITY -->
 	<aside class="bg-dark">
 		<div class="container">
-			<div id="city"></div>
+			<div><i class="fa fa-map-marker" aria-hidden="true"></i> {{vm.city}}</div>
 		</div>
 	</aside>
 
@@ -148,7 +147,9 @@
 	<script src="js/vendors/jquery.easing.min.js"></script>
 	<script src="js/vendors/jquery.fittext.js"></script>
 	<script src="js/vendors/jquery.magnific-popup.min.js"></script>
+	<script src="js/vendors/angular.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers/controller.meteo.js"></script>
 
 </body>
 
