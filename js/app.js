@@ -1,3 +1,5 @@
+
+
 // Datas weather
 /*var weather = {
   "coord": {
@@ -42,9 +44,50 @@
   "cod": 200
 };*/
 //console.log(weather);
+/*
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Lyon&APPID=093a59774aaa3c40102cbca0c0029891&units=metric", false); xhr.send(); 
-var data= JSON.parse(xhr.responseText); 
+xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Lyon&APPID=093a59774aaa3c40102cbca0c0029891&units=metric", false); 
+xhr.send(); 
+var data= JSON.parse(xhr.responseText); //data is now a javascript object full of the API data
+*/
+
+// Var datas
+
+var weather = response ;
+
+function Render () {
+  var temp = Round(weather.main.temp);
+  var description = weather.weather[0].description.toUpperCase();
+  var tempMin = Round(weather.main.temp_min);
+  var tempMax = Round(weather.main.temp_max);
+  var wind = Round(weather.wind.speed);
+  var humidity = Round(weather.main.humidity);
+  var city = weather.name;
+  var country = weather.sys.country;
+};
+// var date and hours
+var infosDate = formattedDate();
+
+console.log(description);
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Lyon&APPID=093a59774aaa3c40102cbca0c0029891&units=metric", true);
+xhr.onload = function (e) {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      console.log(xhr.responseText);
+      var response = JSON.parse(xhr.responseText);
+      console.log(response);
+    } else {
+      console.error(xhr.statusText);
+    }
+  }
+};
+xhr.onerror = function (e) {
+  console.error(xhr.statusText);
+};
+xhr.send(null);
+
 
 // Function datas rounded to the nearest integer
 function Round(x){
@@ -70,19 +113,7 @@ function formattedDate(date) {
     return infosDate ;
 };
 
-// Var datas
-var temp = Round(weather.main.temp);
-var description = weather.weather[0].description.toUpperCase();
-var tempMin = Round(weather.main.temp_min);
-var tempMax = Round(weather.main.temp_max);
-var wind = Round(weather.wind.speed);
-var humidity = Round(weather.main.humidity);
-var city = weather.name;
-var country = weather.sys.country;
-// var date and hours
-var infosDate = formattedDate();
 
-console.log(description);
 //
 window.onload = function infos(){
 	document.getElementById("infosday").innerHTML = infosDate ;
