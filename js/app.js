@@ -1,6 +1,14 @@
 $(function(){
-  getWeather('Lyon', render);
+//  getWeather('Lyon', render);
+  $("#searchCitySubmit").click(submitHandler) ; 
+
 });
+
+function submitHandler(e){
+ // e.preventDefault();
+  var inputValue = $("#searchCityInput").val() ; 
+  getWeather(inputValue, render);
+};
 
 function getWeather(city, callback){
   var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=093a59774aaa3c40102cbca0c0029891&units=metric";
